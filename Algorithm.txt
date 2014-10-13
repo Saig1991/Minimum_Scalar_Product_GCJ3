@@ -1,0 +1,8 @@
+My solution to the minimum scalar product problem, the problem statement is specified below:
+ You are given two vectors v1=(x1,x2,...,xn) and v2=(y1,y2,...,yn). The scalar product of these vectors is a single number, calculated as x1y1+x2y2+...+xnyn. Suppose you are allowed to permute the coordinates of each vector as you wish. Choose two permutations such that the scalar product of your two new vectors is the smallest possible, and output that minimum scalar product. 
+
+Algo: I came up with the solution of multiplying the minimum number in one of the vectors with the maximum number of the other one. Repeat this over until you get the final sum. I couldn't really think away of proving that this solution was optimal, so I just googled and it turns out it's the correct way to do it. I only really thought of two ways to prove it, one would be to just construct lots and lots of test cases (basically a test suite), however then comes the issue of how do I prove that my test cases are correct. The other solution was to use induction, it's been a while since I've done induction though. However Google has verified my solution so I'll just implement it and leave it at that.
+
+Program Design:
+main.cpp:
+Read in the input. Iterate over all the test cases. Construct two vectors for each test case. Sort one and reverse sort the other. Then it's as simple as taking the scalar product.
