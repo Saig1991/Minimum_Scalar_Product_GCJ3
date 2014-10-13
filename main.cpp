@@ -29,8 +29,8 @@ int main(int argc, char* argv[]){
 
                     //Constructing the first vector of numbers.
                     std::stringstream stream1(vector1);
-                    int getNum1 = 0;
-                    std::vector<int> firstVector;
+                    long long getNum1 = 0;
+                    std::vector<long long> firstVector;
                     while(stream1 >> getNum1){
                         firstVector.push_back(getNum1);
                     }
@@ -39,17 +39,26 @@ int main(int argc, char* argv[]){
 
                     //Constructing the second vector of numbers.
                     std::stringstream stream2(vector2);
-                    std::vector<int> secondVector;
-                    int getNum2 = 0;
+                    std::vector<long long> secondVector;
+                    long long getNum2 = 0;
                     while(stream2 >> getNum2){
                         secondVector.push_back(getNum2);
                     }
 
                     //Reverse Sort.
-                    std::sort(firstVector.begin(), firstVector.end(), std::greater<int>());
+                    std::sort(secondVector.begin(), secondVector.end(), std::greater<long long>());
 
-                    int minScalProd = 0;
-                    
+                    long long minScalProd = 0;
+                    std::vector<long long>::iterator firstIt = firstVector.begin();
+                    std::vector<long long>::iterator secondIt = secondVector.begin();
+                    while(firstIt != firstVector.end()){
+                        minScalProd += (*firstIt)*(*secondIt);
+                
+                        firstIt++;  
+                        secondIt++;
+                    }
+                    std::cout << "Case #" << i << ": ";
+                    std::cout <<minScalProd << std::endl;
             }
 
         } else {
